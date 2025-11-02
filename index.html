@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVISO DE EMERGÊNCIA - Criança Encontrada</title>
+    <!-- Carrega o Tailwind CSS para estilo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7; /* Fundo suave */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4">
+
+    <!-- Container Principal Centrado -->
+    <div id="app-container" class="w-full max-w-lg mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-8 mt-4 mb-4 transition-all duration-300">
+
+        <!-- 1. Cabeçalho e Mensagem de Boas-Vindas -->
+        <header class="text-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-blue-600 mx-auto mb-3" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            <h1 class="text-3xl font-extrabold text-gray-800 mb-1">Criança Encontrada!</h1>
+            <p class="text-lg text-gray-600">Obrigado por sua ajuda. Por favor, entre em contato imediatamente.</p>
+        </header>
+
+        <!-- 2. Cartão de Informações da Criança e Contato -->
+        <div class="space-y-4">
+            <!-- Título da Seção -->
+            <h2 class="text-xl font-semibold text-blue-700 border-b pb-2 mb-4">Detalhes de Contato e Identificação</h2>
+
+            <!-- Nome da Criança (Mock Data) -->
+            <div class="p-4 bg-blue-50 rounded-lg">
+                <p class="text-sm font-medium text-gray-500">A Criança é:</p>
+                <p id="child-name" class="text-2xl font-bold text-blue-800">...</p>
+            </div>
+
+            <!-- Nome do Guardião -->
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <p class="text-sm font-medium text-gray-500">Guardão Responsável (Pai/Mãe):</p>
+                <p id="guardian-name" class="text-lg font-bold text-gray-800">...</p>
+            </div>
+            <div class="p-4 bg-gray-50 rounded-lg">
+                <p class="text-sm font-medium text-gray-500">Parentes:</p>
+                <p id="relatives-name" class="text-lg font-bold text-gray-800">...</p>
+            </div>
+            <!-- Telefones de Contato -->
+            <div class="space-y-3">
+                <div class="bg-green-100 p-4 rounded-xl border border-green-300">
+                    <p class="text-sm font-medium text-green-700 mb-1">Contato Principal</p>
+                    <a id="primary-phone-link" href="#" class="text-xl font-extrabold text-green-800 hover:text-green-600 transition duration-150 block">
+                        <span id="primary-phone-display">...</span>
+                    </a>
+                </div>
+                <div class="bg-yellow-100 p-4 rounded-xl border border-yellow-300">
+                    <p class="text-sm font-medium text-yellow-700 mb-1">Contato Secundário</p>
+                    <a id="secondary-phone-link" href="#" class="text-xl font-extrabold text-yellow-800 hover:text-yellow-600 transition duration-150 block">
+                        <span id="secondary-phone-display">...</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Notas Médicas Importantes -->
+            <div class="p-4 bg-red-100 rounded-lg border border-red-300 shadow-md">
+                <p class="text-sm font-medium text-red-700 mb-1 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM13 17h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                    ATENÇÃO MÉDICA
+                </p>
+                <p id="medical-notes" class="text-base text-red-900 font-semibold italic">...</p>
+            </div>
+        </div>
+
+        <!-- 3. Botão de Ação Principal (Chamar Imediatamente) -->
+        <div class="mt-8">
+            <button id="call-button" class="w-full py-4 bg-blue-600 text-white text-xl font-bold rounded-xl shadow-lg hover:bg-blue-700 transition duration-200 focus:outline-none focus:ring-4 focus:ring-blue-300 active:scale-[0.99] flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6.62 10.79a15.43 15.43 0 006.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.23.95.32 1.95.5 3 .5a1 1 0 011 1v3.5a1 1 0 01-1 1c-9.39 0-17-7.61-17-17a1 1 0 011-1h3.5a1 1 0 011 1c0 1.05.18 2.05.5 3 .13.35.05.74-.23 1.02l-2.2 2.2z"/>
+                </svg>
+                LIGAR AGORA (Principal)
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Rodapé e Instruções de Emergência -->
+    <footer class="w-full max-w-lg text-center mt-4 p-4 text-xs text-gray-500">
+        <p class="font-bold text-sm text-red-600 mb-2">SE FOR UMA EMERGÊNCIA DE VIDA OU MORTE, LIGUE PARA 190 (Polícia) ou 192 (Ambulância) ANTES DE LIGAR PARA O CONTATO PRINCIPAL.</p>
+        <p>Esta tag é um recurso auxiliar para contato rápido com o responsável legal.</p>
+    </footer>
+
+    <script>
+        const profile = {
+            childName: "Nicholas F. B.", 
+            
+            guardianName: "Denize e Celso",
+
+            relatives: "(Joinville) Avó: Marlene, Tias: Pamela e Aline,\nap0 (RJ) Avós: Valéria e Celso, Tios: Camille e Jailton",
+
+            primaryPhone: "https://whatsa.me/5547935051914", 
+
+            displayPrimaryPhone: "(47) 93505-1914", 
+            
+            secondaryPhone: "https://whatsa.me/5547989182222",
+
+            displaySecondaryPhone: "(47) 98918-2222", 
+            
+            medicalNotes: "TEA - suporte I, por gentileza entre em contato com algum dos telefones de emergência. Fale com calma e evite multidões.",
+        };
+        // ------------------------------------------
+
+        // Função para preencher a interface com os dados do perfil
+        function loadProfile() {
+            try {
+                document.getElementById('child-name').textContent = profile.childName;
+                document.getElementById('guardian-name').textContent = profile.guardianName;
+                document.getElementById('relatives-name').textContent = profile.relatives;
+                document.getElementById('primary-phone-display').textContent = profile.displayPrimaryPhone;
+                document.getElementById('secondary-phone-display').textContent = profile.displaySecondaryPhone;
+                document.getElementById('medical-notes').textContent = profile.medicalNotes;
+
+                // Configura o link 'tel:' para o contato principal
+                const primaryLink = document.getElementById('primary-phone-link');
+                primaryLink.href = `${profile.primaryPhone}`;
+                
+                // Configura o link 'tel:' para o contato secundário
+                const secondaryLink = document.getElementById('secondary-phone-link');
+                secondaryLink.href = `${profile.secondaryPhone}`;
+
+                // Configura o botão principal de chamada
+                document.getElementById('call-button').onclick = () => {
+                    window.location.href = `tel:${profile.primaryPhone}`;
+                };
+
+                console.log("Perfil carregado com sucesso.");
+
+            } catch (error) {
+                console.error("Erro ao carregar o perfil:", error);
+                // Em caso de erro, pelo menos tenta garantir que o botão principal funcione
+                document.getElementById('call-button').onclick = () => {
+                    window.location.href = `tel:${profile.primaryPhone}`;
+                };
+            }
+        }
+
+        // Carrega o perfil ao iniciar a página
+        window.onload = loadProfile;
+
+    </script>
+</body>
+</html>
