@@ -63,6 +63,18 @@
                         <span id="secondary-phone-display">...</span>
                     </a>
                 </div>
+                <div class="bg-blue-100 p-4 rounded-xl border border-yellow-300">
+                    <p class="text-sm font-medium text-yellow-700 mb-1">Contato Parentes RJ</p>
+                    <a id="third-phone-link" href="#" class="text-xl font-extrabold text-yellow-800 hover:text-yellow-600 transition duration-150 block">
+                        <span id="third-phone-display">...</span>
+                    </a>
+                </div>
+                <div class="bg-pink-100 p-4 rounded-xl border border-yellow-300">
+                    <p class="text-sm font-medium text-yellow-700 mb-1">Contato Parentes Joinville</p>
+                    <a id="fourth-phone-link" href="#" class="text-xl font-extrabold text-yellow-800 hover:text-yellow-600 transition duration-150 block">
+                        <span id="fourth-phone-display">...</span>
+                    </a>
+                </div>
             </div>
             
             <!-- Notas Médicas Importantes -->
@@ -101,7 +113,7 @@
             
             guardianName: "Denize e Celso",
 
-            relatives: "(Joinville) Avó: Marlene, Tias: Pamela e Aline,\nap0 (RJ) Avós: Valéria e Celso, Tios: Camille e Jailton",
+            relatives: "(Joinville) Avó: Marlene, Tias: Pamela e Aline,\n(RJ) Avós: Valéria e Celso, Tios: Camille e Jailton",
 
             primaryPhone: "https://whatsa.me/5547935051914", 
 
@@ -110,8 +122,16 @@
             secondaryPhone: "https://whatsa.me/5547989182222",
 
             displaySecondaryPhone: "(47) 98918-2222", 
+
+            thirdPhone: "https://whatsa.me/5521994341912",
+
+            displayThirdPhone: "(21) 99434-1912", 
+
+            fourthPhone: "https://whatsa.me/5547992510561",
             
-            medicalNotes: "TEA - suporte I, por gentileza entre em contato com algum dos telefones de emergência. Fale com calma e evite multidões.",
+            displayFourthPhone: "(47) 99251-0561",
+            
+            medicalNotes: "TEA - suporte I.",
         };
         // ------------------------------------------
 
@@ -123,6 +143,8 @@
                 document.getElementById('relatives-name').textContent = profile.relatives;
                 document.getElementById('primary-phone-display').textContent = profile.displayPrimaryPhone;
                 document.getElementById('secondary-phone-display').textContent = profile.displaySecondaryPhone;
+                document.getElementById('third-phone-display').textContent = profile.displayThirdPhone;
+                document.getElementById('fourth-phone-display').textContent = profile.displayFourthPhone;
                 document.getElementById('medical-notes').textContent = profile.medicalNotes;
 
                 // Configura o link 'tel:' para o contato principal
