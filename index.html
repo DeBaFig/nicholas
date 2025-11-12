@@ -51,6 +51,7 @@
             
             <!-- Telefones de Contato -->
             <div class="space-y-3">
+                <!-- Contato 1 -->
                 <div class="bg-green-100 p-4 rounded-xl border border-green-300">
                     <p class="text-sm font-medium text-green-700 mb-1">Contato Principal</p>
                     <a id="primary-phone-link" href="#" class="text-xl font-extrabold text-green-800 hover:text-green-600 transition duration-150 block">
@@ -58,12 +59,29 @@
                     </a>
                     <p class="text-xs text-green-600 mt-1">Clique para iniciar o WhatsApp</p>
                 </div>
+                <!-- Contato 2 -->
                 <div class="bg-yellow-100 p-4 rounded-xl border border-yellow-300">
                     <p class="text-sm font-medium text-yellow-700 mb-1">Contato Secundário</p>
                     <a id="secondary-phone-link" href="#" class="text-xl font-extrabold text-yellow-800 hover:text-yellow-600 transition duration-150 block">
                         <span id="secondary-phone-display">...</span>
                     </a>
                      <p class="text-xs text-yellow-700 mt-1">Clique para iniciar o WhatsApp</p>
+                </div>
+                <!-- Contato 3 -->
+                <div class="bg-blue-100 p-4 rounded-xl border border-blue-300">
+                    <p class="text-sm font-medium text-blue-700 mb-1">Contato Parentes RJ</p>
+                    <a id="third-phone-link" href="#" class="text-xl font-extrabold text-blue-800 hover:text-blue-600 transition duration-150 block">
+                        <span id="third-phone-display">...</span>
+                    </a>
+                     <p class="text-xs text-blue-700 mt-1">Clique para iniciar o WhatsApp</p>
+                </div>
+                <!-- Contato 4 -->
+                <div class="bg-pink-100 p-4 rounded-xl border border-pink-300">
+                    <p class="text-sm font-medium text-pink-700 mb-1">Contato Parentes Joinville</p>
+                    <a id="fourth-phone-link" href="#" class="text-xl font-extrabold text-pink-800 hover:text-pink-600 transition duration-150 block">
+                        <span id="fourth-phone-display">...</span>
+                    </a>
+                    <p class="text-xs text-pink-700 mt-1">Clique para iniciar o WhatsApp</p>
                 </div>
             </div>
             
@@ -121,23 +139,33 @@
             childName: "Nicholas F. B.", 
             
             guardianName: "Denize e Celso",
-
             relatives: "(Joinville) Avó: Marlene, Tias: Pamela e Aline,\n(RJ) Avós: Valéria e Celso, Tios: Camille e Jailton",
 
-            // Contatos - Separados para link do WhatsApp e discagem (tel:)
-            primaryPhoneWhatsapp: "https://whatsa.me/5547935051914",
+            // Contato Principal
+            primaryPhoneWhatsapp: "https://whatsa.me/5547935051914", 
             primaryPhoneRaw: "+5547935051914", // Número para discagem (tel:)
             displayPrimaryPhone: "(47) 93505-1914", 
             
+            // Contato Secundário
             secondaryPhoneWhatsapp: "https://whatsa.me/5547989182222",
             secondaryPhoneRaw: "+5547989182222", // Número para discagem (tel:)
             displaySecondaryPhone: "(47) 98918-2222", 
+
+            // Contato Parentes RJ
+            thirdPhoneWhatsapp: "https://whatsa.me/5521994341912",
+            thirdPhoneRaw: "+5521994341912", // Número para discagem (tel:)
+            displayThirdPhone: "(21) 99434-1912", 
+
+            // Contato Parentes Joinville
+            fourthPhoneWhatsapp: "https://whatsa.me/5547992510561",
+            fourthPhoneRaw: "+5547992510561", // Número para discagem (tel:)
+            displayFourthPhone: "(47) 99251-0561",
             
             medicalNotes: "TEA - suporte I, por gentileza entre em contato com algum dos telefones de emergência. Fale com calma e evite multidões.",
-            
+
             // NOVOS CAMPOS
-            bloodType: "O+", 
-            labReportPdfUrl: "/assets/laudo nicholas.pdf", // URL para o laudo médico (Exemplo)
+            bloodType: "O+", // Preenchido com um exemplo
+            labReportPdfUrl: "/assets/Jamie Laudo.pdf", // URL de exemplo
         };
         // ------------------------------------------
 
@@ -150,21 +178,24 @@
                 document.getElementById('relatives-name').textContent = profile.relatives;
                 document.getElementById('primary-phone-display').textContent = profile.displayPrimaryPhone;
                 document.getElementById('secondary-phone-display').textContent = profile.displaySecondaryPhone;
+                document.getElementById('third-phone-display').textContent = profile.displayThirdPhone;
+                document.getElementById('fourth-phone-display').textContent = profile.displayFourthPhone;
                 document.getElementById('medical-notes').textContent = profile.medicalNotes;
 
                 // Preenche NOVOS dados
                 document.getElementById('blood-type').textContent = profile.bloodType;
                 
-                // Configura o link do WhatsApp para os contatos
+                // Configura os links do WhatsApp
                 document.getElementById('primary-phone-link').href = profile.primaryPhoneWhatsapp;
                 document.getElementById('secondary-phone-link').href = profile.secondaryPhoneWhatsapp;
+                document.getElementById('third-phone-link').href = profile.thirdPhoneWhatsapp;
+                document.getElementById('fourth-phone-link').href = profile.fourthPhoneWhatsapp;
                 
                 // Configura o link do Laudo Médico
                 document.getElementById('lab-report-link').href = profile.labReportPdfUrl;
 
-                // Configura o botão principal de chamada (usa tel:)
+                // Configura o botão principal de chamada (usa tel: com o número Raw)
                 document.getElementById('call-button').onclick = () => {
-                    // Usa o número Raw para garantir que a discagem funcione corretamente
                     window.location.href = `tel:${profile.primaryPhoneRaw}`;
                 };
 
